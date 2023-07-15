@@ -3,7 +3,8 @@ import 'package:shoppingapp/models/BeautyProd.dart';
 
 class ProductTile extends StatelessWidget {
   BeautyProd beautyProd;
-  ProductTile({super.key, required this.beautyProd});
+  void Function()? onTap;
+  ProductTile({super.key, required this.beautyProd, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +52,19 @@ class ProductTile extends StatelessWidget {
             ),
 
             // Add to Cart
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.grey[600],
-                borderRadius: BorderRadius.circular(99),
-              ),
-              child: const Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-                size: 50,
+            GestureDetector(
+              onTap: onTap,
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[600],
+                  borderRadius: BorderRadius.circular(99),
+                ),
+                child: const Icon(
+                  Icons.shopping_cart,
+                  color: Colors.white,
+                  size: 50,
+                ),
               ),
             )
           ],
