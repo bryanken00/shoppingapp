@@ -100,7 +100,7 @@ class _ShopPage extends State<ShopPage> {
           // list of Products
           Expanded(
             child: ListView.builder(
-              itemCount: 4,
+              itemCount: value.productData.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 BeautyProd beautyProd = value.getProductList()[index];
